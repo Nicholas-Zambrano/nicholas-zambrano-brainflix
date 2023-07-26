@@ -1,0 +1,74 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.header {
+  margin: 1.6rem;
+
+  &__brainflixLogo {
+    height: 3.5rem;
+    // width: 12rem;
+    margin-bottom: 1rem;
+  }
+  // this is for the search icon in th eform input
+  &__input{
+    background-image: url(../../assets/Icons/search.svg);
+    background-repeat: no-repeat;
+    background-size: 2rem;
+    background-position: 1rem;
+    border-radius: 4px;
+    height: 3.6rem;
+    width: 82%;
+    // width: 24rem;
+    border: 2px silver solid;
+  }
+
+//   this is for the placeholder 'search'
+  &__input::placeholder {
+    color: black;
+    font-size: 1.6rem;
+    position: relative;
+    left: 4rem;
+  }
+  &__input:hover {
+    background-image: none;
+  }
+
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__inputWrapper{
+    display: flex;
+    height: auto;
+    justify-content: space-between;
+  }
+  &__faceImg{
+    // height: 3.6rem;
+    // border-radius:0%;
+    background-image: url(../../assets/Images/Mohan-muruge.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 3.6rem;
+    width: 3.6rem;
+    border-radius: 50%;
+    
+  }
+
+  &__button {
+    background-image: url(../../assets/Icons/upload.svg);
+    background-repeat: no-repeat;
+    background-size: 2rem;
+    background-position: 1rem;
+    background-color: $brainflix-button;
+    color: white;
+    height: 3.6rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 1.6rem;
+    font-weight: 700;
+    
+  }
+}
