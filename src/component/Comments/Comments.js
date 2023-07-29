@@ -35,11 +35,14 @@ function Comments({ currentVideo }) {
 
           return (
             <article className="comments">
-              <div className="comments__nameDate">
-                <h3 className="comments__name">{comment.name}</h3>
-                <p className="comments__date">{convertedDate}</p>
-              </div>
-              <p className="comments__commented">{comment.comment}</p>
+              <div className="comments__image"></div>
+              <section className="comments__textWrapper">
+                <div className="comments__nameDate">
+                  <h3 className="comments__name">{comment.name}</h3>
+                  <p className="comments__date">{convertedDate}</p>
+                </div>
+                <p className="comments__commented">{comment.comment}</p>
+              </section>
             </article>
           );
         })}

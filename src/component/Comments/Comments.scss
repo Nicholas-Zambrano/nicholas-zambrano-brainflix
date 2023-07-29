@@ -56,9 +56,9 @@
 }
 
 .comments {
-  flex-direction: column;
+//   flex-direction: column;
   display: flex;
-  // justify-content: space-evenly;
+  justify-content: space-between;
   // gap: 1.6rem;
   padding-bottom: 1.6rem;
   border-bottom: 2px solid #e1e1e1;
@@ -86,5 +86,17 @@
   &__numberOfComments {
     margin: 0 1.6rem;
     font-weight: 600;
+  }
+  &__image{
+
+    height: 3.6rem;
+    width: 3.6rem;
+    background-color: #E1E1E1;
+    border-radius: 50%;
+    margin: 1.6rem 0;
+  }
+
+  &__textWrapper{
+    width: 24rem;
   }
 }
