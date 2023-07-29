@@ -5,7 +5,7 @@ function Comments({ currentVideo }) {
   // event.preventDefault();
   //   }
 
-  const comments = currentVideo.comments;
+  const comments = currentVideo.comments; // this is the currentVideo, which is updated with the setCurrentVideo function
 
   //   function displayComments(comments) {
   //     comments.map((comment) => {
