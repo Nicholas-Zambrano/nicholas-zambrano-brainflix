@@ -1,0 +1,21 @@
+.videoList{
+
+
+
+    &__wrapper{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        
+    }
+    &__image{
+        height: 8rem;
+        width: 10rem;
+        border-radius: 1rem;
+
+    }
+    &__description{
+        height: auto;
+        width: 20rem;
+    }
+}

@@ -24,6 +24,7 @@ function Video({ currentVideo }) {
 
         <div className="video__description">
           <p>{currentVideo.description}</p>
+          
         </div>
       </section>
     </section>
