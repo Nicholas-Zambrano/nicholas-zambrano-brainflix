@@ -6,21 +6,40 @@
   height: auto;
   width: auto;
 
+  &__mainVideoWrapper {
+    background-color: black;
+  }
+
   &__mainVid {
     height: auto;
     width: 100%;
     margin-bottom: 2.4rem;
+
+    @include tablet {
+      padding: 0 3.6rem;
+      margin-bottom: -0.3rem;
+    }
   }
   &__overview {
     margin-bottom: 1.6rem;
     margin-left: 1.6rem;
     margin-right: 1.6rem;
+
+    @include tablet {
+      margin: 0 3.6rem;
+      margin-bottom: 1.6rem;
+    }
   }
 
   &__titleWrapper {
-    
     border-bottom: 2px solid #e1e1e1;
-    padding-bottom: 2rem;
+    padding: 2rem 0;
+
+    @include tablet {
+      padding-top: 3.6rem;
+      border-bottom: none;
+      padding-bottom: 0;
+    }
   }
   &__title {
     font-size: 2.4rem;
@@ -34,26 +53,78 @@
     justify-content: space-between;
     border-bottom: 2px solid #e1e1e1;
     padding-bottom: 2rem;
+    @include tablet {
+      padding: 0;
+    }
 
-    &--pTags{
-        color: gray;
-        width: 11rem;
-        display: flex;
-        align-items: center;
+    &--pTags {
+      color: gray;
+      width: 11rem;
+      display: flex;
+      align-items: center;
+    }
+  }
+//   &__date {
+//     &--tablet {
+//       @include tablet {
+//         display: none;
+//       }
+//     }
+//   }
+
+  &__date {
+    &--mobile{
+        @include mobile{
+            display: none;
+        }
+    }
+    &--tablet {
+      @include tablet {
+        display: none;
+      }
     }
   }
 
-  &__viewsWrapper{
+  &__viewsWrapper {
     display: flex;
     align-items: center;
+    
+
+    &--mobile{
+        // display: none;
+    }
+
+    &--tablet{
+        @include tablet{
+            // display: none;
+        }
+    }
+
+    // changed the order
+    @include tablet {
+      // order: 1;
+        // display: none;
+    }
   }
 
-  &__likesWrapper{
+
+
+  &__likesWrapper {
     display: flex;
     align-items: center;
+
+
   }
 
-  &__viewsImg{
+  &__tabletWrapperChannel {
+    display: flex;
+  }
+
+  &__tabletWrapperViewsLikes{
+    display: flex;
+  }
+
+  &__viewsImg {
     background-image: url("../../assets/Icons/views.svg");
     height: 4rem;
     width: 4rem;
@@ -62,7 +133,7 @@
     background-size: 2.3rem;
   }
 
-  &__likesImg{
+  &__likesImg {
     background-image: url("../../assets/Icons/likes.svg");
     height: 4rem;
     width: 4rem;
@@ -71,12 +142,16 @@
     background-size: 2rem;
   }
 
-  &__channel{
+  &__channel {
     font-size: 1.8rem;
     font-weight: 600;
+
+    // @include tablet{
+
+    // }
   }
 
-  &__description{
+  &__description {
     padding: 1.6rem 0;
     font-size: 1.3rem;
     line-height: 1.8rem;

@@ -31,6 +31,8 @@ function Header() {
         </div>
         {/* <br></br> */}
         <button className="header__button"> UPLOAD</button>
+
+        <img className="header__faceImgTablet"></img>
       </form>
     </section>
   );
