@@ -1,22 +1,4 @@
-// function Header() {
-//   return (
 
-//       {/* <header className="header"> */}
-//         <section className="header__topHeading">
-
-//             <div className="header">
-
-//             </div>
-
-//             <h1>BrainFLix</h1>
-
-//         </section>
-//       {/* </header> */}
-
-//   );
-// }
-
-// importing the scss
 import "./Header.scss";
 
 // adding an image tag

@@ -1,27 +1,84 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-.video{
-    // height: 50rem;
+.video {
+  // height: 50rem;
+  height: auto;
+  width: auto;
+
+  &__mainVid {
     height: auto;
-    width: auto;
+    width: 100%;
+    margin-bottom: 2.4rem;
+  }
+  &__overview {
+    margin-bottom: 1.6rem;
+    margin-left: 1.6rem;
+    margin-right: 1.6rem;
+  }
 
+  &__titleWrapper {
+    
+    border-bottom: 2px solid #e1e1e1;
+    padding-bottom: 2rem;
+  }
+  &__title {
+    font-size: 2.4rem;
+    // margin-bottom:2rem ;
+    // margin: 0 1.6rem;
+  }
 
+  &__analytics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 2px solid #e1e1e1;
+    padding-bottom: 2rem;
 
-    &__mainVid{
-        height: auto;
-        width:100%;
-        margin-bottom: 2.4rem;
+    &--pTags{
+        color: gray;
+        width: 11rem;
+        display: flex;
+        align-items: center;
     }
-    &__overview{
-        margin: 1.6rem;
-    }
+  }
 
-    &__title{
-        font-size: 2.4rem;
-        // margin: 0 1.6rem;
-    }
+  &__viewsWrapper{
+    display: flex;
+    align-items: center;
+  }
 
-  
+  &__likesWrapper{
+    display: flex;
+    align-items: center;
+  }
 
+  &__viewsImg{
+    background-image: url("../../assets/Icons/views.svg");
+    height: 4rem;
+    width: 4rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 2.3rem;
+  }
+
+  &__likesImg{
+    background-image: url("../../assets/Icons/likes.svg");
+    height: 4rem;
+    width: 4rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 2rem;
+  }
+
+  &__channel{
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  &__description{
+    padding: 1.6rem 0;
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+  }
 }
