@@ -7,7 +7,7 @@ function VideosList({ videos, videoClicked }) {
   return (
     // console.log("hello")
     <section className="videoList">
-      <h2>NEXT VIDEOS</h2>
+      <h3 className="videoList__mainTitle">NEXT VIDEOS</h3>
       <section className="videoList__container">
         {videoList.map((video) => {
           // console.log(video.id);
@@ -24,7 +24,7 @@ function VideosList({ videos, videoClicked }) {
                 alt={video.title}
               ></img>
               <div className="videoList__description">
-                <h3>{video.title}</h3>
+                <h3 className="videoList__titles">{video.title}</h3>
                 <p>{video.channel}</p>
               </div>
             </div>

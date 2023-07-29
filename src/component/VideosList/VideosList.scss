@@ -1,21 +1,34 @@
-.videoList{
+.videoList {
+  margin: 1.6rem;
 
+  &__mainTitle {
+    color: silver;
+    font-weight: 600;
+    font-size: 1.8rem;
+  }
 
-
-    &__wrapper{
-        height: 100%;
-        width: 100%;
-        display: flex;
-        
-    }
-    &__image{
-        height: 8rem;
-        width: 10rem;
-        border-radius: 1rem;
-
-    }
-    &__description{
-        height: auto;
-        width: 20rem;
-    }
+  &__wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 1.6rem 0;
+  }
+  &__image {
+    height: 8rem;
+    width: 12rem;
+    border-radius: 1rem;
+  }
+  &__description {
+    height: auto;
+    width: 14.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  &__titles {
+    font-size: 1.4rem;
+    margin: 0;
+  }
 }
