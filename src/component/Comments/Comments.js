@@ -6,45 +6,45 @@ function Comments({ currentVideo }) {
   //   }
 
   const comments = currentVideo.comments; // this is the currentVideo, which is updated with the setCurrentVideo function
-
-  //   function displayComments(comments) {
-  //     comments.map((comment) => {
-  //       return (
-  //         <div>
-  //           <p>{comment.name}</p>
-  //           <p>{comment.comment}</p>
-  //         </div>
-  //       );
-  //       // console.log(currentVideo.comment);
-  //     });
-  //   }
-
   console.log(currentVideo.comments);
   return (
-    <form className="form">
-      <label>JOIN THE CONVERSATION</label>
-      <input
-        type="text"
-        name="comment"
-        id="comment"
-        placeholder="Add a new comment"
-        className="form__comment"
-      />
+    <>
+      {/* displaying the number of comments */}
+      <p className="comments__numberOfComments">{comments.length} Comments</p>
 
-      <button>COMMENT</button>
+      <form className="form">
+        <article className="form__wrapper">
+          <div className="form__img"></div>
+          <div className="form__inputWrapper">
+            <label className="form__label">JOIN THE CONVERSATION</label>
+            <input
+              type="text"
+              name="comment"
+              id="comment"
+              placeholder="Add a new comment"
+              className="form__comment"
+            />
 
-      {comments.map((comment) => {
-        return (
-          <section className="comments">
-            <div>
-              <p>{comment.name}</p>
-              <p>{comment.timestamp}</p>
-            </div>
-            <p>{comment.comment}</p>
-          </section>
-        );
-      })}
-    </form>
+            <button className="form__button">COMMENT</button>
+          </div>
+        </article>
+        {comments.map((comment) => {
+          const convertedDate = new Date(
+            comment.timestamp
+          ).toLocaleDateString();
+
+          return (
+            <article className="comments">
+              <div className="comments__nameDate">
+                <h3 className="comments__name">{comment.name}</h3>
+                <p className="comments__date">{convertedDate}</p>
+              </div>
+              <p className="comments__commented">{comment.comment}</p>
+            </article>
+          );
+        })}
+      </form>
+    </>
   );
 }
 

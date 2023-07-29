@@ -4,8 +4,8 @@ import "./App.scss";
 import Header from "./component/Header/Header";
 import Video from "./component/Video/Video";
 import { useState } from "react";
-import videosJson from "./assets/Data/videos.json";
-import videoDetailsJson from "./assets/Data/video-details.json";
+import videosJson from "./Data/videos.json";
+import videoDetailsJson from "./Data/video-details.json";
 import Comments from "./component/Comments/Comments";
 import VideosList from "./component/VideosList/VideosList";
 
@@ -78,9 +78,9 @@ function App() {
         {/* setCurrentVideo(videoObj)  */}
       </div>
 
-      <section className="comments">
+      {/* <section className="comments"> */}
         <Comments currentVideo={currentVideo} />
-      </section>
+      {/* </section> */}
 
       <section>
         {/* made the function as a prop so we can both access the data for the two JSON files */}
