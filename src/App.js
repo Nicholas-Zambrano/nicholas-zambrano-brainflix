@@ -14,14 +14,6 @@ function App() {
   const [videos, setVideos] = useState(videosJson);
   const [videoDetails, setVideoDetails] = useState(videoDetailsJson);
   const [currentVideo, setCurrentVideo] = useState(videoDetailsJson[0]);
-  const [updateMainVideo, setUpdateMainVideo] = useState(videoDetailsJson[0]);
-  // console.log(currentVideo); // this gives us the first element
-  // console.log(videos);
-
-  // console.log("nico");
-  // console.log(videoDetails.id); // this one includes the comments(bigger data)
-  // console.log(videos); // this is the shorter one
-  // console.log("heloo nico");
 
   function videoClicked(videoId) {
     //finding the match of the id
@@ -46,9 +38,6 @@ function App() {
       // you need to update the video with the matchedID, so call the function 'setCurrentVideo', now that video selected from the list becomes the new current video
       setCurrentVideo(matchedID);
 
-      // updated the main video by calling the update state function , with the video selected from the video list
-      // setUpdateMainVideo(matchedID);
-
       // now need to filter out that selected video from the list, by calling the update state function
       setVideos((filteredVid) => {
         return filteredVid.filter((removingVid) => {
@@ -59,15 +48,6 @@ function App() {
       });
     }
   }
-  console.log("checking id");
-
-  console.log("checking all id");
-
-  // mapping through the ids in videoDetails
-  // const videoDetailsID = videoDetails.map((video) => {
-  //   return video.id;
-  // });
-  // console.log(videoDetailsID);
 
   return (
     <main className="app">
@@ -76,13 +56,10 @@ function App() {
       </div>
 
       <Video currentVideo={currentVideo} videoClicked={videoClicked} />
-      {/* setCurrentVideo(videoObj)  */}
       <section className="app__mainContainer">
         <section className="app__mainWrapper">
           <VideoOverview currentVideo={currentVideo} />
-          {/* <section className="comments"> */}
           <Comments currentVideo={currentVideo} />
-          {/* </section> */}
         </section>
         {/* made the function as a prop so we can both access the data for the two JSON files */}
         <VideosList videos={videos} videoClicked={videoClicked} />

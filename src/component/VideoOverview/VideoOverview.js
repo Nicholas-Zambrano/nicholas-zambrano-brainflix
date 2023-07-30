@@ -1,4 +1,5 @@
 function VideoOverview({ currentVideo }) {
+  // converted timestamp
   const convertedDate = new Date(currentVideo.timestamp).toLocaleDateString();
 
   return (
@@ -6,17 +7,21 @@ function VideoOverview({ currentVideo }) {
       {/* i got the first video title */}
 
       <section>
+        {/* video overview section */}
         <div className="video__titleWrapper">
           <h1 className="video__title">{currentVideo.title}</h1>
         </div>
 
+        {/* analytics section */}
         <div className="video__analytics">
           <div>
             <h3 className="video__channel">{currentVideo.channel}</h3>
           </div>
 
           {/* <section className="video__viewsDateWrapper">
-        diplicated it here */}
+        diplicated it here 
+        this is for the views on desktop in order to match its display
+        */}
           <div className="video__viewsWrapper ">
             <div className="video__viewsImg"></div>
             <p className="video__views  video__analytics--pTags">
@@ -24,6 +29,7 @@ function VideoOverview({ currentVideo }) {
             </p>
           </div>
 
+          {/* this is for the tablet */}
           <section className="video__viewsDateWrapperTablet">
             <div className="video__viewsWrapperTablet">
               <div className="video__viewsImg"></div>
@@ -36,19 +42,17 @@ function VideoOverview({ currentVideo }) {
             </p>
           </section>
 
-          {/* duplicated here */}
+          {/* duplicated here, in order to match the dispay of the tablet and desktop*/}
           <p className="video__date video__analytics--pTags  video__dateTablet">
             {convertedDate}
           </p>
-          {/* </section> */}
-          {/* <div> */}
+
           <div className="video__likesWrapper">
             <div className="video__likesImg"></div>
             <p className="video__likes video__analytics--pTags">
               {currentVideo.likes}
             </p>
           </div>
-          {/* </div> */}
         </div>
       </section>
 

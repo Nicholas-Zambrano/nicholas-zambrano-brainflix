@@ -1,18 +1,21 @@
 import "./VideosList.scss";
 function VideosList({ videos, videoClicked }) {
-  const videoList = videos.slice(1); // skipped the first video , as thats already included in the main vid
-  // console.log(videoList[].id);
+  // skipped the first video , as thats already included in the main vid
+  const videoList = videos.slice(1);
 
-  console.log(videos);
+  // console.log(videos);
+
   return (
-    // console.log("hello")
     <section className="videoList">
+      {/* the main title for the video list */}
       <h3 className="videoList__mainTitle">NEXT VIDEOS</h3>
       <section className="videoList__container">
+        {/* mapping through video list array */}
         {videoList.map((video) => {
           // console.log(video.id);
           return (
             <div
+            // call back function when a video is clicked
               className="videoList__wrapper"
               onClick={() => {
                 videoClicked(video.id);

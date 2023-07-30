@@ -9,13 +9,17 @@
     margin-right: 3.6rem;
     display: flex;
     justify-content: space-between;
+
   }
 
   @include desktop{
     // margin: 5rem;
-    margin-top: 2.6rem;
+    padding-top: 2.6rem;
+    padding-bottom: 1rem;
     margin-right:10rem;
     margin-left:10rem ;
+    max-width: 1100px;
+    margin: auto;
   }
 
   &__titleWrapper {
@@ -27,7 +31,7 @@
     // width: 12rem;
     margin-bottom: 1rem;
   }
-  // this is for the search icon in th eform input
+  // this is for the search icon in the form input
   &__input {
     background-image: url(../../assets/Icons/search.svg);
     background-repeat: no-repeat;
@@ -97,6 +101,7 @@
     }
   }
 
+  // styling the button
   &__button {
     background-image: url("../../assets/Icons/upload.svg");
     background-repeat: no-repeat;

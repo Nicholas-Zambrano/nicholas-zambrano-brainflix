@@ -1,18 +1,23 @@
 @use "./styles/partials/mixins" as *;
 @use "./styles/partials/variables" as *;
+// @use "../../styles/partials/fonts" as *;
+// @use  "./styles/partials/fonts" as *;
 
 .app {
   height: 100%;
 
+  // contains all the properties below the video picture
   &__mainContainer {
 
     @include desktop {
       display: flex;
+      max-width: 1280px;
+      margin: auto;
     }
   }
 
+  // created a main wrapper that wraps all the comments and description of the video
   &__mainWrapper {
-    // width: 50rem;
 
     @include desktop{
       border-right:2px solid #e1e1e1;
