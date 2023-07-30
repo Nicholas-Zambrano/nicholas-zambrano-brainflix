@@ -16,6 +16,8 @@ function Comments({ currentVideo }) {
         <article className="form__wrapper">
           <div className="form__img"></div>
           <div className="form__inputWrapper">
+
+            <div className="form__labelCommentWrapper">
             <label className="form__label">JOIN THE CONVERSATION</label>
             <input
               type="text"
@@ -24,6 +26,7 @@ function Comments({ currentVideo }) {
               placeholder="Add a new comment"
               className="form__comment"
             />
+            </div>
 
             <button className="form__button">COMMENT</button>
           </div>
