@@ -19,6 +19,12 @@
       padding: 0 3.6rem;
       margin-bottom: -0.3rem;
     }
+
+    // modifying the padding for the main picture
+    @include desktop{
+      padding: 0 15rem;
+      height: 55rem;
+    }
   }
   &__overview {
     margin-bottom: 1.6rem;
