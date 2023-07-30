@@ -5,6 +5,11 @@
 .videoList {
   margin: 1.6rem;
 
+  @include desktop{
+    margin-left: 3rem;
+    margin-right: 10rem;
+  }
+
   &__mainTitle {
     color: silver;
     font-weight: 600;

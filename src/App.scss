@@ -1,3 +1,21 @@
+@use "./styles/partials/mixins" as *;
+@use "./styles/partials/variables" as *;
+
 .app {
   height: 100%;
+
+  &__mainContainer {
+
+    @include desktop {
+      display: flex;
+    }
+  }
+
+  &__mainWrapper {
+    // width: 50rem;
+
+    @include desktop{
+      border-right:2px solid #e1e1e1;
+    }
+  }
 }

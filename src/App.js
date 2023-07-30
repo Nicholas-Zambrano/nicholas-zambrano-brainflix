@@ -8,6 +8,7 @@ import videosJson from "./Data/videos.json";
 import videoDetailsJson from "./Data/video-details.json";
 import Comments from "./component/Comments/Comments";
 import VideosList from "./component/VideosList/VideosList";
+import VideoOverview from "./component/VideoOverview/VideoOverview";
 
 function App() {
   const [videos, setVideos] = useState(videosJson);
@@ -30,7 +31,7 @@ function App() {
       console.log("this is the split");
       // (videoId === "84e96018-4022-434e-80bf-000ce4cd12b8").remove()
 
-      return (videoDetailsId.id === videoId);
+      return videoDetailsId.id === videoId;
     });
     if (matchedID) {
       console.log("its a match");
@@ -48,7 +49,7 @@ function App() {
       // updated the main video by calling the update state function , with the video selected from the video list
       // setUpdateMainVideo(matchedID);
 
-      // now need to filter out that selected video from the list, by calling the update state function 
+      // now need to filter out that selected video from the list, by calling the update state function
       setVideos((filteredVid) => {
         return filteredVid.filter((removingVid) => {
           return (
@@ -57,7 +58,6 @@ function App() {
         });
       });
     }
-
   }
   console.log("checking id");
 
@@ -70,19 +70,20 @@ function App() {
   // console.log(videoDetailsID);
 
   return (
-    <main>
-      <div className="app">
+    <main className="app">
+      <div className="app__header">
         <Header />
-
-        <Video currentVideo={currentVideo} videoClicked={videoClicked} />
-        {/* setCurrentVideo(videoObj)  */}
       </div>
 
-      {/* <section className="comments"> */}
-        <Comments currentVideo={currentVideo} />
-      {/* </section> */}
-
-      <section>
+      <Video currentVideo={currentVideo} videoClicked={videoClicked} />
+      {/* setCurrentVideo(videoObj)  */}
+      <section className="app__mainContainer">
+        <section className="app__mainWrapper">
+          <VideoOverview currentVideo={currentVideo} />
+          {/* <section className="comments"> */}
+          <Comments currentVideo={currentVideo} />
+          {/* </section> */}
+        </section>
         {/* made the function as a prop so we can both access the data for the two JSON files */}
         <VideosList videos={videos} videoClicked={videoClicked} />
       </section>

@@ -15,6 +15,11 @@
     margin: 3.6rem;
   }
 
+  @include desktop{
+    margin: 3rem 10rem;
+    margin-right: 0;
+  }
+
   &__wrapper {
     display: flex;
     justify-content: space-between;
@@ -22,6 +27,11 @@
 
     @include tablet{
       align-items: center;
+    }
+
+    // fixing the spaces in the form in the desktop
+    @include desktop{
+      padding-right:3rem ;
     }
   }
 
@@ -112,6 +122,17 @@
     padding-bottom:2.6rem ;
   }
 
+  @include desktop{
+    padding-right:3rem;
+
+  }
+// targeted the last child in 
+  &:last-child{
+    @include desktop{
+      border-bottom: none;
+    }
+  }
+
   &__nameDate {
     display: flex;
     align-items: center;
@@ -148,6 +169,13 @@
       margin: 0 3.6rem;
       font-weight: 700;
     }
+
+    @include desktop{
+      margin: 0 10rem;
+      margin-top: 3rem;
+      margin-right: 0;
+      padding-right: 3rem;
+    }
   }
   &__image {
     height: 3.6rem;
@@ -155,6 +183,11 @@
     background-color: #e1e1e1;
     border-radius: 50%;
     margin: 1.6rem 0;
+
+    @include desktop{
+      height: 4rem;
+      width: 4rem;
+    }
   }
 
   &__textWrapper {
