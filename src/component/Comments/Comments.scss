@@ -160,7 +160,7 @@
   &__textWrapper {
     width: 24rem;
 
-    // fixing the lwidth of the comments
+    // fixing the width of the comments
     @include tablet{
       width: 90%;
     }
