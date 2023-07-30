@@ -2,8 +2,6 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-
-
 .videoList {
   margin: 1.6rem;
 
@@ -25,6 +23,11 @@
     height: 8rem;
     width: 12rem;
     border-radius: 1rem;
+
+    // @include tablet{
+    //   height: 8rem;
+    //   width: 14rem;
+    // }
   }
   &__description {
     height: auto;
@@ -32,9 +35,21 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+
+    @include tablet {
+      gap: 1rem;
+      // margin: 0rem 0;
+    }
   }
   &__titles {
     font-size: 1.4rem;
     margin: 0;
+
+    @include tablet {
+      // width: 15rem;
+      line-height: 2.2rem;
+      font-weight: 600;
+      width: 18rem;
+    }
   }
 }
