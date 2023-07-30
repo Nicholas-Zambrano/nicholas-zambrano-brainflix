@@ -45,6 +45,10 @@
     font-size: 2.4rem;
     // margin-bottom:2rem ;
     // margin: 0 1.6rem;
+
+    @include tablet{
+      font-size: 3.3rem;
+    }
   }
 
   &__analytics {
@@ -64,63 +68,49 @@
       align-items: center;
     }
   }
-//   &__date {
-//     &--tablet {
-//       @include tablet {
-//         display: none;
-//       }
-//     }
-//   }
 
   &__date {
-    &--mobile{
-        @include mobile{
-            display: none;
-        }
-    }
-    &--tablet {
-      @include tablet {
+    &--mobile {
+      @include mobile {
         display: none;
       }
+    }
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__likes {
+    @include tablet {
+      justify-content: flex-end;
+      width: auto;
     }
   }
 
   &__viewsWrapper {
     display: flex;
     align-items: center;
-    
 
-    &--mobile{
-        // display: none;
+    &--mobile {
+      // display: none;
     }
 
-    &--tablet{
-        @include tablet{
-            // display: none;
-        }
-    }
-
-    // changed the order
     @include tablet {
-      // order: 1;
-        // display: none;
+      display: none;
     }
   }
-
-
 
   &__likesWrapper {
     display: flex;
     align-items: center;
-
-
   }
 
   &__tabletWrapperChannel {
     display: flex;
   }
 
-  &__tabletWrapperViewsLikes{
+  &__tabletWrapperViewsLikes {
     display: flex;
   }
 
@@ -146,14 +136,46 @@
     font-size: 1.8rem;
     font-weight: 600;
 
-    // @include tablet{
-
-    // }
+    @include tablet{
+      font-weight: 700;
+    }
   }
 
   &__description {
     padding: 1.6rem 0;
     font-size: 1.3rem;
     line-height: 1.8rem;
+  }
+
+  &__viewsDateWrapper {
+    @include tablet {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__viewsDateWrapperTablet {
+    @include mobile {
+      display: none;
+    }
+    @include tablet {
+      display: flex;
+      align-items: center;
+      color: gray;
+      width: 45rem;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+    }
+  }
+  &__viewsWrapperTablet {
+    @include tablet {
+      display: flex;
+      // align-items: center;
+    }
+  }
+
+  &__viewsTablet{
+    justify-content: flex-end;
+    width: auto;
   }
 }
