@@ -1,0 +1,51 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+.uploadForm{
+    // for each from group
+
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+
+
+    &__group{
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    &__label{
+        font-weight: 600;
+        color: silver;
+        font-size: 1.4rem;
+    }
+}
+
+.input{
+    background-color: $Alabaster;
+    border: 2px solid $mercury;
+    
+    &::placeholder{
+        color:black;
+    }
+
+    &__addTitle{
+        height: 3.6rem;
+        // background-color: $Alabaster;
+
+    }
+
+    &__addDescription{
+        height: 10rem;
+        // background-color: $Alabaster;
+
+        &::placeholder{
+            position: relative;
+            bottom: 2.5rem;
+                }
+    }
+    // &__addDescription::placeholder{
+        
+    // }
+
+
+}

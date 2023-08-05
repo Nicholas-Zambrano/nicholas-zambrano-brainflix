@@ -1,9 +1,9 @@
 // export default App;
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Header from "./component/Header/Header";
-import NextVideo from "./pages/VideoUpload";
+import NextVideo from "./pages/VideoUpload/VideoUpload";
 import VideoPlayerPage from "./pages/VideoPlayerPage";
-import VideoUpload from "./pages/VideoUpload";
+import VideoUpload from "./pages/VideoUpload/VideoUpload";
 
 function App() {
   return (
