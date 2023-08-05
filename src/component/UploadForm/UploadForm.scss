@@ -12,6 +12,10 @@
         margin: 2.6rem 3.6rem;
     }
 
+    @include desktop{
+        gap: 3rem;
+    }
+
 
     &__group{
         display: flex;
@@ -31,6 +35,8 @@
 
     @include desktop{
         border: none;
+        padding-bottom: 0;
+        margin-right: 0;
     }
 }
 
@@ -45,12 +51,18 @@
     &__addTitle{
         height: 3.6rem;
         // background-color: $Alabaster;
+        @include desktop{
+            height: 4.6rem;
+        }
 
     }
 
     &__addDescription{
         height: 10rem;
         // background-color: $Alabaster;
+        @include desktop{
+            height: 12rem;
+        }
 
         &::placeholder{
             position: relative;

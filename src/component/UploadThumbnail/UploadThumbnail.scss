@@ -8,6 +8,11 @@
   @include tablet {
     margin: 0 3.6rem;
   }
+
+  @include desktop{
+    width: 60%;
+    margin: auto;
+  }
   
   &__title {
     color: silver;
@@ -23,5 +28,9 @@
     width: 100%;
     border-radius: 4px;
     max-width: 35rem;
+
+    @include desktop{
+        max-width: 45rem;
+    }
   }
 }
