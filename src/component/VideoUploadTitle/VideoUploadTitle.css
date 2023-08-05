@@ -1,0 +1,10 @@
+.upload__header {
+  border-top: 2px solid #e1e1e1;
+}
+.upload__header__title {
+  height: 10rem;
+}
+.upload__header__button {
+  background-color: red;
+  font-size: 5rem;
+}/*# sourceMappingURL=VideoUploadTitle.css.map */

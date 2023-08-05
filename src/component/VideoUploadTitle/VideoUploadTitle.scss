@@ -1,0 +1,20 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+// .upload__header {
+//   border-top: 2px solid #e1e1e1;
+//   &__title{
+//     height: 10rem;
+//     }
+//     &__button{
+//         background-color: red;
+//         font-size: 5rem;
+//     }
+// }
+.upload {
+  border-top: 2px solid #e1e1e1;
+  
+  .upload__title {
+    padding: 2.6rem 0;
+  }
+}

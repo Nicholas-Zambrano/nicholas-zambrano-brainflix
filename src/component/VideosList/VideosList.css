@@ -1,0 +1,50 @@
+.videoList {
+  margin: 1.6rem;
+}
+@media screen and (min-width: 1280px) {
+  .videoList {
+    margin-left: 3rem;
+    margin-right: 10rem;
+  }
+}
+.videoList__mainTitle {
+  color: silver;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+.videoList__wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 1.6rem 0;
+}
+.videoList__image {
+  height: 8rem;
+  width: 12rem;
+  border-radius: 1rem;
+}
+.videoList__description {
+  height: auto;
+  width: 14.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .videoList__description {
+    gap: 1rem;
+  }
+}
+.videoList__titles {
+  font-size: 1.4rem;
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .videoList__titles {
+    line-height: 2.2rem;
+    font-weight: 600;
+    width: 18rem;
+  }
+}/*# sourceMappingURL=VideosList.css.map */

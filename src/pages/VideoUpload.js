@@ -1,8 +1,11 @@
 
+import VideoUploadTitle from "../component/VideoUploadTitle/VideoUploadTitle";
 
 function VideoUpload(){
     return(
-        <div>hello</div>
+        <main>
+            <VideoUploadTitle/>
+        </main>
         )
 }
 export default VideoUpload;
