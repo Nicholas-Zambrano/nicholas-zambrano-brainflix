@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./VideosList.scss";
 
-function VideosList({ videos, videoClicked }) {
+function VideosList({ getvideos, videoClicked }) {
   // skipped the first video , as thats already included in the main vid
   // use usestate to skip the first video !!!
   // const videoList = videos.slice(1);
@@ -14,23 +14,48 @@ function VideosList({ videos, videoClicked }) {
 
   const [videosList, setVideosList] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  // console.log("he");
+
+
+
+    // const filteredVid = videoList.filter((videoSelected) => {
+    //   return(videoSelected.id !== getvideos.id);
+    // });
+ 
+
 
   useEffect(() => {
     axios
       .get(`${API_BASE_URL}/videos?api_key=${API_KEY}`)
       .then((response) => {
         // console.log(response);
-        setVideosList(response.data.slice(1));
+        // filtering the array, and returning the videos that are not currently selected as main vid
+        const filteredVid = response.data.filter((videoSelected)=>{
+          return(videoSelected.id !== getvideos.id)
+        })
+        
+        // setVideosList(response.data.slice(1));
+        setVideosList(filteredVid)
+        console.log(filteredVid);
+        
+        // setVideosList(response.data)
         setIsLoading(false);
       })
       .catch((error) => {
         console.log(error);
-      });
-  }, []);
+      })
+      
+  }, [getvideos.id]); // the use effect is executed when the video id changes
 
   if (isLoading) {
     return <p>Its loading</p>;
   }
+
+
+
+  console.log("checking");
+  // console.log(filteredVid);
+  // console.log(videosList);
 
   return (
     <section className="videoList">
@@ -41,8 +66,8 @@ function VideosList({ videos, videoClicked }) {
         {videosList.map((video) => {
           // console.log(video.id);
           return (
-            // so need to link each video: 
-            <Link key={video.id} to= {`/video/${video.id}`}>
+            // so need to link each video:
+            <Link key={video.id} to={`/video/${video.id}`}>
               <div
                 // call back function when a video is clicked
                 className="videoList__wrapper"

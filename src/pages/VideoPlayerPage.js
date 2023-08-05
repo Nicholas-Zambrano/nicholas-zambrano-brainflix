@@ -19,6 +19,8 @@ function VideoPlayerPage() {
   const [isLoading, setIsLoading] = useState(true);
   const { videoID } = useParams();
   // console.log(videoID);
+  // console.log("he");
+console.log(getvideos); // this is the selected video
 
   function getVideo(id) {
     axios
@@ -52,6 +54,14 @@ function VideoPlayerPage() {
     return null;
   }
 
+  // const filteredVid = (selectedVid)=>{
+    
+  //     if(videoID){
+        
+  //     }
+    
+  // }
+
   return (
     <main className="app">
       <Video currentVideo={getvideos} />
@@ -61,7 +71,7 @@ function VideoPlayerPage() {
           <Comments currentVideo={getvideos} />
         </section>
 
-        <VideosList />
+        <VideosList getvideos={getvideos} />
       </section>
     </main>
   );

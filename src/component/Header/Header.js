@@ -2,19 +2,21 @@ import "./Header.scss";
 
 // adding an image tag
 import logo from "../../assets/Logo/BrainFlix-logo.svg";
+import { Link } from "react-router-dom";
 
 // header component
 function Header() {
   return (
     <section className="header">
       <div className="header__titleWrapper">
-        <a href="">
+        {/* linking the button to the home page*/}
+        <Link to="/">
           <img
             className="header__brainflixLogo"
             src={logo}
             alt="Brainflix-logo"
           />
-        </a>
+        </Link>
       </div>
 
       {/* creating a form for the search and upload */}
