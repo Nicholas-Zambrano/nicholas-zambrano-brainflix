@@ -1,8 +1,9 @@
 // export default App;
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Header from "./component/Header/Header";
-import NextVideo from "./pages/NextVideo";
+import NextVideo from "./pages/VideoUpload";
 import VideoPlayerPage from "./pages/VideoPlayerPage";
+import VideoUpload from "./pages/VideoUpload";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           {/* <Route path="/video/:videoId" element={<NextVideo />} /> */}
           <Route path="/video/:videoID" element={<VideoPlayerPage />} />
 
+          <Route path="/videoUpload"  element={<VideoUpload />}/>
         </Routes>
       </main>
     </BrowserRouter>

@@ -32,7 +32,11 @@ function Header() {
           {/* added div tag which contains the image as a background image*/}
           <img className="header__faceImg"></img>
         </div>
-        <button className="header__button"> UPLOAD</button>
+
+        {/* linking the upload button to the video upload page  */}
+        <Link to="/videoUpload">
+          <button className="header__button"> UPLOAD</button>
+        </Link>
 
         {/* face image but only on tablet */}
         <img className="header__faceImgTablet"></img>
