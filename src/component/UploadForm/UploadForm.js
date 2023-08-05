@@ -8,7 +8,7 @@ function UploadForm() {
           className="input input__addTitle "
           type="text"
           name="addTitle"
-          placeholder="Add a title to your video"
+          placeholder="   Add a title to your video"
         />
       </div>
 
@@ -18,7 +18,7 @@ function UploadForm() {
         <input className="input input__addDescription"
         type="text"
         name="addDescription"
-        placeholder="Add a description to your video"
+        placeholder="   Add a description to your video"
         />
       </div>
     </form>
