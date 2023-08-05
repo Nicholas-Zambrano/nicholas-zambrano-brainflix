@@ -1,4 +1,40 @@
-
 // .uploadMain{
 //     padding: 0 1.6rem;
 // }
+
+// .uploadActions{
+
+//     display: flex;
+//     /* width: 32rem; */
+//     align-items: center;
+//     justify-content: flex-end;
+
+// }
+
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+// .form {
+//   &--upload {
+//     @include tablet {
+//     //   background-color: red;
+//       position: relative;
+//       bottom:2rem ;
+//     }
+//   }
+// }
+
+.uploadMain {
+  &__wrapper {
+    @include desktop {
+      display: flex;
+    }
+  }
+
+  &__form{
+    @include desktop{
+        width: 100%;
+    
+    }
+  }
+}

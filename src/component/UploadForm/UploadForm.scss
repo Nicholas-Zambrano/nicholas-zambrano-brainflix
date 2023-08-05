@@ -6,6 +6,11 @@
     gap: 2rem;
     display: flex;
     flex-direction: column;
+    margin: 1.6rem;
+
+    @include tablet{
+        margin: 2.6rem 3.6rem;
+    }
 
 
     &__group{
@@ -17,6 +22,15 @@
         font-weight: 600;
         color: silver;
         font-size: 1.4rem;
+    }
+
+    @include tablet{
+        padding-bottom: 3rem;
+        border-bottom: 2px solid #e1e1e1;
+    }
+
+    @include desktop{
+        border: none;
     }
 }
 

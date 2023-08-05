@@ -4,9 +4,21 @@
 
 .upload {
   border-top: 2px solid #e1e1e1;
+
+
   
   .upload__title {
     padding: 2.6rem 1.6rem;
+
+    @include tablet{
+        padding:2.6rem 0;
+        padding-top: 0;
+
+        margin: 3.6rem 3.6rem;
+        font-size: 3.3rem;
+        border-bottom:  2px solid #e1e1e1;
+
+    }
     
   }
 }
