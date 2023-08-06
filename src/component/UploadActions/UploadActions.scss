@@ -44,4 +44,23 @@
         font-size: 1.5rem;
         
     }
+
+    &__newContentWrapper{
+        height: 15rem;
+        background-image:url("https://en.pimg.jp/046/634/548/1/46634548.jpg") ;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: flex;
+    }
+
+    &__newContentTitle{
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: blue;
+        
+    }
+
+
 }
