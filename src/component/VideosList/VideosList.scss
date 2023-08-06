@@ -4,6 +4,10 @@
 .videoList {
   margin: 1.6rem;
 
+  @include tablet{
+    margin-left: 3.6rem;
+  }
+
   @include desktop{
     margin-left: 3rem;
     margin-right: 10rem;

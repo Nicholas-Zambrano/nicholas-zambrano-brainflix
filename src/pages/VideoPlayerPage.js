@@ -1,13 +1,9 @@
 import "../styles/partials/_resets.scss";
 import "../App.scss";
-// import Header from "../component/Header/Header";
 import Video from "../component/Video/Video";
 import { useEffect, useState } from "react";
-// import videosJson from "../Data/videos.json";
-// import videoDetailsJson from "../Data/video-details.json";
 import Comments from "../component/Comments/Comments";
 import VideosList from "../component/VideosList/VideosList";
-
 import VideoOverview from "../component/VideoOverview/VideoOverview";
 import axios from "axios";
 import { useParams } from "react-router-dom";
@@ -19,8 +15,7 @@ function VideoPlayerPage() {
   const [isLoading, setIsLoading] = useState(true);
   const { videoID } = useParams();
   // console.log(videoID);
-  // console.log("he");
-console.log(getvideos); // this is the selected video
+  console.log(getvideos); // this is the selected video
 
   function getVideo(id) {
     axios
@@ -53,14 +48,6 @@ console.log(getvideos); // this is the selected video
   if (isLoading) {
     return null;
   }
-
-  // const filteredVid = (selectedVid)=>{
-    
-  //     if(videoID){
-        
-  //     }
-    
-  // }
 
   return (
     <main className="app">

@@ -1,17 +1,39 @@
+import axios from "axios";
+
+import { useEffect } from "react";
 import "./Comments.scss";
 
 function Comments({ currentVideo }) {
   // this is the currentVideo, which is updated with the setCurrentVideo function
   const comments = currentVideo.comments;
+  const API_BASE_URL = "https://project-2-api.herokuapp.com";
+  const API_KEY = "1ca570a3-8506-4c77-9dfc-66a557d5396b";
+
+  // function handleComment(event){
+  //   event.preventDefault();
+  //   console.log("hello");
+
+  //   useEffect(()=>{
+  //     axios
+  //     .post(`${API_BASE_URL}/videos?api_key=${API_KEY}`)
+  //     .then((response)=>{
+  //       console.log(response.data);
+  //     })
+
+  //   })
+
+  //   // need to create a copy of the array and post it
+
+  // }
+
   // console.log(currentVideo.comments);
   return (
     <>
       {/* displaying the number of comments */}
       <p className="comments__numberOfComments">{comments.length} Comments</p>
 
-{/* initialised a form */}
+      {/* initialised a form */}
       <form className="form">
-
         <article className="form__wrapper">
           <div className="form__img"></div>
           <div className="form__inputWrapper">
@@ -31,7 +53,7 @@ function Comments({ currentVideo }) {
           </div>
         </article>
 
-        {/* mapping through comments array in json file and displaying them */}
+        {/* mapping through comments array  and displaying them */}
         {comments.map((comment) => {
           // convert timestamp to a normal date
           const convertedDate = new Date(

@@ -7,16 +7,13 @@ function UploadActions() {
   const navigate = useNavigate();
 
   const handlePublish = () => {
-    // console.log("he");
-    setNewContent(true); // we set new content to true as we want something to be displayed when clicking the button
+    // we set new content to true as we want something to be displayed when clicking the button
+    setNewContent(true);
 
     // we added a timeout to show the new content for a temporay amount of time
-    // once the time is completed se it back to false, to show original content
+    // once the time is completed set it back to false and redirect to home page
     setTimeout(() => {
       setNewContent(false);
-      console.log("timeout");
-
-      // we are redirecting back to the home page after the timeout has completed
       navigate("/");
     }, 2000);
   };

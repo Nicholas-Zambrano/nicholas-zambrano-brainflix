@@ -17,7 +17,8 @@
   // this is the wrapper for each artice
   &__wrapper {
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
+    gap: 2rem;
     border-bottom: 2px solid #e1e1e1;
 
     @include tablet {
@@ -104,7 +105,8 @@
 // this is the article for each article
 .comments {
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
+  gap: 2rem;
   padding-bottom: 1.6rem;
   border-bottom: 2px solid $mercury;
 

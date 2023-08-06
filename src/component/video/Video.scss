@@ -16,9 +16,16 @@
     // margin-bottom: 2.4rem;
     filter: brightness(125%) contrast(125%);
 
+    // gave all the videos max height 
+    @include mobile{
+      min-height: 15rem;
+       max-height: 30rem;
+    }
+
     @include tablet {
       padding: 0 3.6rem;
       margin-bottom: -0.3rem;
+      max-height: 45rem;
     }
 
     // modifying the padding for the main picture
