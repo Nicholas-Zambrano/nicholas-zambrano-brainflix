@@ -1,7 +1,17 @@
 import "./UploadForm.scss";
+// import "../UploadActions/UploadActions"
+import UploadActions from "../UploadActions/UploadActions";
 function UploadForm() {
+
+  function handlesubmit(event) {
+    event.preventDefault();
+    console.log("hello");
+
+
+  }
+
   return (
-    <form className="uploadForm">
+    <form onSubmit={handlesubmit} className="uploadForm">
       <div className="uploadForm__group">
         <label className="uploadForm__label">TITLE YOUR VIDEO</label>
         <input
@@ -13,14 +23,19 @@ function UploadForm() {
       </div>
 
       <div className="uploadForm__group">
-
         <label className="uploadForm__label">ADD A VIDEO DESCRIPTION</label>
-        <input className="input input__addDescription"
-        type="text"
-        name="addDescription"
-        placeholder="   Add a description to your video"
+        <input
+          className="input input__addDescription"
+          type="text"
+          name="addDescription"
+          placeholder="   Add a description to your video"
         />
       </div>
+
+      <section>
+        {/* <button>Submit</button> */}
+        <UploadActions />
+      </section>
     </form>
   );
 }

@@ -9,7 +9,24 @@ function Comments({ currentVideo }) {
   const API_BASE_URL = "https://project-2-api.herokuapp.com";
   const API_KEY = "1ca570a3-8506-4c77-9dfc-66a557d5396b";
 
+  // function handleComment(event){
+  //   event.preventDefault();
+  //   console.log("hello");
 
+  //   useEffect(()=>{
+  //     axios
+  //     .post(`${API_BASE_URL}/videos?api_key=${API_KEY}`)
+  //     .then((response)=>{
+  //       console.log(response.data);
+  //     })
+
+  //   })
+
+  //   // need to create a copy of the array and post it
+
+  // }
+
+  // console.log(currentVideo.comments);
   return (
     <>
       {/* displaying the number of comments */}

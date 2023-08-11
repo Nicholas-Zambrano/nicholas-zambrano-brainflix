@@ -19,7 +19,10 @@ function VideoPlayerPage() {
 
   function getVideo(id) {
     axios
-      .get(`${API_BASE_URL}/videos/${id}?api_key=${API_KEY}`)
+      // .get(`${API_BASE_URL}/videos/${id}?api_key=${API_KEY}`)
+      
+      // communicating with the API we created
+      .get(`http://localhost:7500/videos/${id}`)
       .then((response) => {
         setGetVideos(response.data);
         setIsLoading(false);
@@ -34,7 +37,8 @@ function VideoPlayerPage() {
       getVideo(videoID);
     } else {
       axios
-        .get(`${API_BASE_URL}/videos?api_key=${API_KEY}`)
+        // .get(`${API_BASE_URL}/videos?api_key=${API_KEY}`)
+        .get(`http://localhost:7500/videos`)
         .then((response) => {
           const firstVideoId = response.data[0].id;
           getVideo(firstVideoId);

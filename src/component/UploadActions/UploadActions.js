@@ -28,8 +28,8 @@ function UploadActions() {
     else {
       return (
         <div className="uploadActions">
-          <button
-            onClick={() => handlePublish()}
+          <button type="button"
+            // onClick={() => handlePublish()}
             className="uploadActions__publish"
           >
             PUBLISH

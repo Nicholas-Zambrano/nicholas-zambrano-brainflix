@@ -15,7 +15,8 @@ function VideosList({ getvideos }) {
 
   useEffect(() => {
     axios
-      .get(`${API_BASE_URL}/videos?api_key=${API_KEY}`)
+      // .get(`${API_BASE_URL}/videos?api_key=${API_KEY}`)
+      .get("http://localhost:7500/videos")
       .then((response) => {
         // console.log(response);
         // filtering the array, and returning the videos that are not currently selected as main vid

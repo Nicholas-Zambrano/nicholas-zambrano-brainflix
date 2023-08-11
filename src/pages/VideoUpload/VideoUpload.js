@@ -14,10 +14,10 @@ function VideoUpload() {
           <UploadForm />
         </section>
       </section>
-
+{/* 
       <section className="">
         <UploadActions />
-      </section>
+      </section> */}
     </main>
   );
 }
