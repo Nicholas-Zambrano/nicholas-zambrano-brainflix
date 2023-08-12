@@ -12,14 +12,17 @@ function UploadForm() {
     event.preventDefault();
 
     const newVideo = {
+      // allows to contain the title and description of the image
       title: event.target.addTitle.value,
       description: event.target.addDescription.value,
+      image: "http://localhost:7500/public/vegeta.jpeg",
     };
-    
-    axios.post("http://localhost:7500/videos",newVideo)
-    .then((response)=>{
+     console.log(newVideo);
+
+
+    axios.post("http://localhost:7500/videos", newVideo).then((response) => {
       console.log(response.data);
-    })
+    });
 
     console.log("hello");
     setNewContent(true);
