@@ -55,6 +55,7 @@ function UploadForm() {
             PUBLISH
           </button>
 
+          {/* the 'cancel' links to the home page */}
           <Link className="uploadActions__cancelLink" to= "/">
             <span className="uploadActions__cancelWrapper">
               <h3 className="uploadActions__cancel">CANCEL</h3>
@@ -66,6 +67,7 @@ function UploadForm() {
   }
 
   return (
+    // made the form an onsubmit, in order to trigger a function 
     <form onSubmit={handlesubmit} className="uploadForm">
       <div className="uploadForm__group">
         <label className="uploadForm__label">TITLE YOUR VIDEO</label>

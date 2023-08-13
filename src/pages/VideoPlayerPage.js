@@ -13,9 +13,10 @@ function VideoPlayerPage() {
   const [getvideos, setGetVideos] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const { videoID } = useParams();
-  // console.log(videoID);
-  console.log(getvideos); // this is the selected video
 
+  /* created a function , that gets that video with the specified id
+  once it updated we set loading to false, as we got the data
+  */
   function getVideo(id) {
     axios
       .get(`${API_BASE_URL}/${id}`)
@@ -28,6 +29,13 @@ function VideoPlayerPage() {
       });
   }
 
+
+  /**
+   * if if of the video is provided,then we get that video,
+   * else we make another axios request to get all the data, so that we select the first video
+   * which occurs when theres is no id specified
+   * if the video id changes then the useEffect is triggered
+   */
   useEffect(() => {
     if (videoID) {
       getVideo(videoID);
@@ -44,6 +52,7 @@ function VideoPlayerPage() {
     }
   }, [videoID]);
 
+  
   if (isLoading) {
     return null;
   }

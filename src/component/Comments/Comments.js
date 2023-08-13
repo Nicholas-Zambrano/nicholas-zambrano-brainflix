@@ -74,7 +74,7 @@ function Comments({ currentVideo }) {
         </article>
 
         {/* mapping through comments array  and displaying them */}
-        {uploadComments.map((comment)  => {
+        {uploadComments.map((comment,index)  => {
           // convert timestamp to a normal datea
           const convertedDate = new Date(
             comment.timestamp
@@ -82,7 +82,8 @@ function Comments({ currentVideo }) {
 
           return (
             // wrapping each comment in a article
-            <article className="comments" key={comment.id}>
+            //  the index of the comment is the key
+            <article className="comments" key={index}>
               <div className="comments__image"></div>
               <section className="comments__textWrapper">
                 <div className="comments__nameDate">

@@ -1,6 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Header from "./component/Header/Header";
-import NextVideo from "./pages/VideoUpload/VideoUpload";
 import VideoPlayerPage from "./pages/VideoPlayerPage";
 import VideoUpload from "./pages/VideoUpload/VideoUpload";
 
