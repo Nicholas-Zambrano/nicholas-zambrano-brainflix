@@ -8,7 +8,7 @@ function Comments({ currentVideo }) {
   // this is the currentVideo, which is updated with the setCurrentVideo function
   // this gives you the current comments for that video
   const comments = currentVideo.comments;
-  const API_BASE_URL = "https://project-2-api.herokuapp.com";
+  const API_BASE_URL = "http://localhost:7500/videos";
   const API_KEY = "1ca570a3-8506-4c77-9dfc-66a557d5396b";
 
   // created a usestate, which the comments are initalized to its initial set of of comments
@@ -36,7 +36,7 @@ function Comments({ currentVideo }) {
     */
     axios
       .post(
-        `http://localhost:7500/videos/${currentVideo.id}/comments`,
+        `${API_BASE_URL}/${currentVideo.id}/comments`,
         newComment
       )
       .then((response) => {

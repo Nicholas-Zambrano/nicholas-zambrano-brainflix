@@ -6,8 +6,7 @@ import "./VideosList.scss";
 function VideosList({ getvideos }) {
 
   // console.log(videos);
-  const API_BASE_URL = "https://project-2-api.herokuapp.com";
-  const API_KEY = "1ca570a3-8506-4c77-9dfc-66a557d5396b";
+  const API_BASE_URL = "http://localhost:7500/videos";
 
   const [videosList, setVideosList] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -16,7 +15,7 @@ function VideosList({ getvideos }) {
   useEffect(() => {
     axios
       // .get(`${API_BASE_URL}/videos?api_key=${API_KEY}`)
-      .get("http://localhost:7500/videos")
+      .get(`${API_BASE_URL}`)
       .then((response) => {
         // console.log(response);
         // filtering the array, and returning the videos that are not currently selected as main vid
@@ -51,7 +50,7 @@ function VideosList({ getvideos }) {
           // console.log(video.id);
           return (
             // so need to link each video:
-            <Link key={video.id} to={`/video/${video.id}`}>
+            <Link key={video.id} to={`/video/${video.id}`} className="videoList__link">
               <div
                 // call back function when a video is clicked
                 className="videoList__wrapper"

@@ -1,17 +1,17 @@
 import "./UploadForm.scss";
 import UploadActions from "../UploadActions/UploadActions";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useEffect } from "react";
 
 function UploadForm() {
   const [newContent, setNewContent] = useState(false);
   const navigate = useNavigate();
+  const API_BASE_URL = "http://localhost:7500/videos";
 
   function handlesubmit(event) {
     event.preventDefault();
-
 
     const newVideo = {
       // allows to contain the title and description of the image
@@ -19,14 +19,12 @@ function UploadForm() {
       description: event.target.addDescription.value,
       image: "http://localhost:7500/public/vegeta.jpeg",
     };
-     console.log(newVideo);
+    console.log(newVideo);
 
-
-    axios.post("http://localhost:7500/videos", newVideo).then((response) => {
+    axios.post(`${API_BASE_URL}`, newVideo).then((response) => {
       console.log(response.data);
     });
 
-    console.log("hello");
     setNewContent(true);
 
     setTimeout(() => {
@@ -45,9 +43,11 @@ function UploadForm() {
             PUBLISH
           </button>
 
-          <span className="uploadActions__cancelWrapper">
-            <h3 className="uploadActions__cancel">CANCEL</h3>
-          </span>
+          <Link className="uploadActions__cancelLink" to= "/">
+            <span className="uploadActions__cancelWrapper">
+              <h3 className="uploadActions__cancel">CANCEL</h3>
+            </span>
+          </Link>
         </div>
       );
     }
@@ -55,7 +55,6 @@ function UploadForm() {
 
   return (
     <form onSubmit={handlesubmit} className="uploadForm">
-      {/* <section> */}
       <div className="uploadForm__group">
         <label className="uploadForm__label">TITLE YOUR VIDEO</label>
         <input
@@ -77,7 +76,6 @@ function UploadForm() {
           placeholder="   Add a description to your video"
         />
       </div>
-      {/* </section> */}
 
       <section>{showContent()}</section>
     </form>
