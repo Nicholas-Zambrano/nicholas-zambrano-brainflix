@@ -3,6 +3,7 @@ import UploadActions from "../UploadActions/UploadActions";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useEffect } from "react";
 
 function UploadForm() {
   const [newContent, setNewContent] = useState(false);
@@ -10,6 +11,7 @@ function UploadForm() {
 
   function handlesubmit(event) {
     event.preventDefault();
+
 
     const newVideo = {
       // allows to contain the title and description of the image

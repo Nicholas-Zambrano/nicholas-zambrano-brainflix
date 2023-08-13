@@ -1,30 +1,48 @@
 import axios from "axios";
+import { useState } from "react";
 
 import { useEffect } from "react";
 import "./Comments.scss";
 
 function Comments({ currentVideo }) {
   // this is the currentVideo, which is updated with the setCurrentVideo function
+  // this gives you the current comments for that video
   const comments = currentVideo.comments;
   const API_BASE_URL = "https://project-2-api.herokuapp.com";
   const API_KEY = "1ca570a3-8506-4c77-9dfc-66a557d5396b";
 
-  // function handleComment(event){
-  //   event.preventDefault();
-  //   console.log("hello");
+  // created a usestate, which the comments are initalized to its initial set of of comments
+  const [uploadComments, setUploadComments] = useState(comments);
 
-  //   useEffect(()=>{
-  //     axios
-  //     .post(`${API_BASE_URL}/videos?api_key=${API_KEY}`)
-  //     .then((response)=>{
-  //       console.log(response.data);
-  //     })
+  // function is triggered,when submitting the comment form
+  function handleComment(event) {
+    event.preventDefault();
 
-  //   })
+    // accessing the input comment
+    const newComment = {
+      comment: event.target.comment.value,
+    };
+    console.log(newComment);
 
-  //   // need to create a copy of the array and post it
+    /* 
+      sends a post request to the server to add a new comment for that specific video
+      with the 'newComment' object that contains the new comment
+    */
+    axios
+      .post(
+        `http://localhost:7500/videos/${currentVideo.id}/comments`,
+        newComment
+      )
+      .then((response) => {
+        console.log(response.data);
+        // update the comments by appending the new comment to the original comment state
+        setUploadComments([...uploadComments, response.data]);
+        console.log(response.data);
+      });
+    event.target.reset();
 
-  // }
+    // window.location.reload();
+  }
 
   // console.log(currentVideo.comments);
   return (
@@ -33,7 +51,7 @@ function Comments({ currentVideo }) {
       <p className="comments__numberOfComments">{comments.length} Comments</p>
 
       {/* initialised a form */}
-      <form className="form">
+      <form onSubmit={handleComment} className="form">
         <article className="form__wrapper">
           <div className="form__img"></div>
           <div className="form__inputWrapper">
@@ -49,12 +67,14 @@ function Comments({ currentVideo }) {
               />
             </div>
             {/* button for submitting the comment */}
-            <button className="form__button">COMMENT</button>
+            <button type="submit" className="form__button">
+              COMMENT
+            </button>
           </div>
         </article>
 
         {/* mapping through comments array  and displaying them */}
-        {comments.map((comment) => {
+        {uploadComments.map((comment) => {
           // convert timestamp to a normal date
           const convertedDate = new Date(
             comment.timestamp
