@@ -14,6 +14,12 @@ function Comments({ currentVideo }) {
   // created a usestate, which the comments are initalized to its initial set of of comments
   const [uploadComments, setUploadComments] = useState(comments);
 
+  // triigers when comments variable change i.e the when video is switched
+  useEffect(() => {
+    // displays the current comments
+    setUploadComments(comments);
+  }, [comments]);
+
   // function is triggered,when submitting the comment form
   function handleComment(event) {
     event.preventDefault();
