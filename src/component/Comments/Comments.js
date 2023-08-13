@@ -28,29 +28,23 @@ function Comments({ currentVideo }) {
     const newComment = {
       comment: event.target.comment.value,
     };
-    console.log(newComment);
 
     /* 
       sends a post request to the server to add a new comment for that specific video
       with the 'newComment' object that contains the new comment
     */
     axios
-      .post(
-        `${API_BASE_URL}/${currentVideo.id}/comments`,
-        newComment
-      )
+      .post(`${API_BASE_URL}/${currentVideo.id}/comments`, newComment)
       .then((response) => {
-        console.log(response.data);
         // update the comments by appending the new comment to the original comment state
         setUploadComments([...uploadComments, response.data]);
-        console.log(response.data);
       });
     event.target.reset();
 
+    // wanted the page to auto refresh for each new comment
     // window.location.reload();
   }
 
-  // console.log(currentVideo.comments);
   return (
     <>
       {/* displaying the number of comments */}
@@ -80,15 +74,15 @@ function Comments({ currentVideo }) {
         </article>
 
         {/* mapping through comments array  and displaying them */}
-        {uploadComments.map((comment) => {
-          // convert timestamp to a normal date
+        {uploadComments.map((comment)  => {
+          // convert timestamp to a normal datea
           const convertedDate = new Date(
             comment.timestamp
           ).toLocaleDateString();
 
           return (
             // wrapping each comment in a article
-            <article className="comments">
+            <article className="comments" key={comment.id}>
               <div className="comments__image"></div>
               <section className="comments__textWrapper">
                 <div className="comments__nameDate">

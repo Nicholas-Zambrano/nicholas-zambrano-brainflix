@@ -13,26 +13,38 @@ function UploadForm() {
   function handlesubmit(event) {
     event.preventDefault();
 
+    /**
+     * created an object which is filled with properties for the uploaded video
+     */
     const newVideo = {
       // allows to contain the title and description of the image
       title: event.target.addTitle.value,
       description: event.target.addDescription.value,
       image: "http://localhost:7500/public/vegeta.jpeg",
     };
-    console.log(newVideo);
 
+    // send a post reqiest to the server to add the new video
     axios.post(`${API_BASE_URL}`, newVideo).then((response) => {
       console.log(response.data);
     });
 
+    // when submitting the 'publish' button , we want the new content to show
     setNewContent(true);
 
+    /**  allowing the publish notification to be displayed for 3 seconds,
+     *  and set the content false to display original content
+     */
     setTimeout(() => {
       setNewContent(false);
       navigate("/");
     }, 2000);
   }
 
+  /**
+   * 
+   * if content is true, then display the new content
+   * otherwise display the orignal content
+   */
   function showContent() {
     if (newContent === true) {
       return <div className="uploadActions__newContentWrapper"></div>;

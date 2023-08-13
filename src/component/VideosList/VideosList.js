@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import "./VideosList.scss";
 
 function VideosList({ getvideos }) {
-
   // console.log(videos);
   const API_BASE_URL = "http://localhost:7500/videos";
 
@@ -35,7 +34,6 @@ function VideosList({ getvideos }) {
       });
   }, [getvideos.id]); // the use effect is executed when the video id changes
 
-
   if (isLoading) {
     return <p>Its loading</p>;
   }
@@ -50,13 +48,14 @@ function VideosList({ getvideos }) {
           // console.log(video.id);
           return (
             // so need to link each video:
-            <Link key={video.id} to={`/video/${video.id}`} className="videoList__link">
+            <Link
+              key={video.id}
+              to={`/video/${video.id}`}
+              className="videoList__link"
+            >
               <div
                 // call back function when a video is clicked
                 className="videoList__wrapper"
-                // onClick={() => {
-                //   videoClicked(video.id);
-                // }}
               >
                 <img
                   className="videoList__image"
